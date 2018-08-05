@@ -1,8 +1,9 @@
-Author Carpentry at RDA/CODATA DataTrieste2018: Reproducible Research Reporting and Dynamic Documents with Open Authoring Tools
+Author Carpentry at RDA/CODATA DataTrieste2018: Reproducible Research Reporting with Open Authoring Tools
 =======
 
-*Instructor: Gail Clement*  
-*Lesson Development: Gail Clement, Tom Morrell*
+- *Instructor: Gail Clement* 
+
+- *Lesson Development: Gail Clement, Tom Morrell, Donna Wrublewski, Robert Doeil, Yuvi Panda*
 
 **Lesson status: In Development**
 
