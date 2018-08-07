@@ -10,8 +10,8 @@ Author Carpentry at RDA/CODATA DataTrieste2018: Reproducible Research Reporting 
 ### What you will learn:
 - Identify the features of a reproducible and dynamic research report that is fit to enter the scholarly record.
 - Describe the benefits of composing research reports with open authoring tools.
-- Apply a text-based workflow for creating a paper that combines dynamic text, code and software.
-- Demonstrate an open-source workflow for automatically converting openly authored documents for publication, online posting and professional presentation.
+- Apply an open, text-based workflow for creating a paper that combines dynamic text, code and software.
+-  Use the Rmarkdown-Knitr-Pandoc workflow to convert openly authored documents for publication, online posting and professional presentation.
 - Demonstrate use of the RStudio GUI platform for authoring and producing professional-quality research reports.
 
 ### Topics:

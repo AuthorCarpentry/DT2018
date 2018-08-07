@@ -1,6 +1,6 @@
 #  Dynamic Content in the Reproducible Report
 
-3 hours
+2 hours
 
 ---------------------------------------------------
 
@@ -11,30 +11,12 @@ In this lesson we'll add a set of dynamic features to the exercise file and knit
 
 ## Learning Objectives
 
-* Integrate dynamic content from an R script so the output is continually updated 
 * Distinguish between dynamic elements that will (and won't) work in multiple output formats (HTML, Word)
 * Add an HTML widget to allow user interaction in an output HTML document
 * Parameterize a document to permit efficient and powerful customized HTML reports
 * Demonstrate the power of integrating content from the Web into your reproducible report
 
 ----------------------------------------------------
-
-## Content generated from R scripts
-
-Up to now, you have manually entered three dates referenced in this document. Let's replace them with dynamically generated dates that will auto-update by the computer!
-
-1. Open the file `insert_4a_dates.R`  
-2. Copy the code into the 3 different sections of the exercise file, as directed in the comments included in`insert_4a_dates.R`  
-3. Close the file `insert_4a_dates.R`
-
-
-Another section of the exercise file that can be populated by the computer is the number of journals in the *DOAJ Seal* data set. Let's replace manually-composed text with computer code!
-
-1. Open the file `insert_4a_jnls.txt`
-2. Copy the code into the **Data being collected** section of the exercise file, making it the first sentence. 
-3. Close the file `insert_4a_jnls.txt`
-
-Save the changes to the exercise file and knit to HTML and Word. Can you find the dynamically-generated inline text now? When was your document originally created and how many journals have the DOAJ Seal?
 
 
 ## Auto-generate bibliography files
@@ -59,11 +41,10 @@ Rmarkdown offers multiple ways to add user interactivity into your reproducible 
 
 Let's start by adding a `code folding` option in our HTML output. This small interactive feature allows readers to see or hide the code chunks embedded in your report.
 
-1. In the YAML header of the exercise file, add a new line below the `output:` and `html:` lines. 
+1. In the YAML header of the exercise file, add a new line below the `output:` and `html:` lines. This line should be at the same indent as other html options such as `css`, `toc`, `number_sections`, etc.
 
 `code_folding: hide`
 
-This line should be at the same indent as other html options such as `css`, `toc`, `number_sections`, etc.
 
 2. Save the changes to the exercise file and knit to HTML and Word. 
 
