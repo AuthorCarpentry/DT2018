@@ -24,7 +24,7 @@
 <section>
 <h1>Dynamic Content in the Reproducible Report</h1>
 
-<p>3 hours</p>
+<p>2 hours</p>
 
 <hr />
 
@@ -35,7 +35,6 @@
 <h2>Learning Objectives</h2>
 
 <ul>
-<li>Integrate dynamic content from an R script so the output is continually updated</li>
 <li>Distinguish between dynamic elements that will (and won&rsquo;t) work in multiple output formats (HTML, Word)</li>
 <li>Add an HTML widget to allow user interaction in an output HTML document</li>
 <li>Parameterize a document to permit efficient and powerful customized HTML reports</li>
@@ -43,26 +42,6 @@
 </ul>
 
 <hr />
-
-<h2>Content generated from R scripts</h2>
-
-<p>Up to now, you have manually entered three dates referenced in this document. Let&rsquo;s replace them with dynamically generated dates that will auto-update by the computer!</p>
-
-<ol>
-<li>Open the file <code>insert_4a_dates.R</code><br /></li>
-<li>Copy the code into the 3 different sections of the exercise file, as directed in the comments included in<code>insert_4a_dates.R</code><br /></li>
-<li>Close the file <code>insert_4a_dates.R</code></li>
-</ol>
-
-<p>Another section of the exercise file that can be populated by the computer is the number of journals in the <em>DOAJ Seal</em> data set. Let&rsquo;s replace manually-composed text with computer code!</p>
-
-<ol>
-<li>Open the file <code>insert_4a_jnls.txt</code></li>
-<li>Copy the code into the <strong>Data being collected</strong> section of the exercise file, making it the first sentence.</li>
-<li>Close the file <code>insert_4a_jnls.txt</code></li>
-</ol>
-
-<p>Save the changes to the exercise file and knit to HTML and Word. Can you find the dynamically-generated inline text now? When was your document originally created and how many journals have the DOAJ Seal?</p>
 
 <h2>Auto-generate bibliography files</h2>
 
@@ -89,12 +68,10 @@
 <p>Let&rsquo;s start by adding a <code>code folding</code> option in our HTML output. This small interactive feature allows readers to see or hide the code chunks embedded in your report.</p>
 
 <ol>
-<li>In the YAML header of the exercise file, add a new line below the <code>output:</code> and <code>html:</code> lines.</li>
+<li>In the YAML header of the exercise file, add a new line below the <code>output:</code> and <code>html:</code> lines. This line should be at the same indent as other html options such as <code>css</code>, <code>toc</code>, <code>number_sections</code>, etc.</li>
 </ol>
 
 <p><code>code_folding: hide</code></p>
-
-<p>This line should be at the same indent as other html options such as <code>css</code>, <code>toc</code>, <code>number_sections</code>, etc.</p>
 
 <ol>
 <li>Save the changes to the exercise file and knit to HTML and Word.</li>
