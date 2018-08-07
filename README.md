@@ -2,7 +2,6 @@ Author Carpentry at RDA/CODATA DataTrieste2018: Reproducible Research Reporting 
 =======
 
 - *Instructor: Gail Clement* 
-
 - *Lesson Development: Gail Clement, Tom Morrell, Donna Wrublewski, Robert Doeil, Yuvi Panda*
 
 **Lesson status: In Development**
@@ -36,6 +35,6 @@ We'll work through software installation during the first day.
 - [DataTrieste2018 Home](http://indico.ictp.it/event/8329/)
 - [Hackmd course notes](https://hackmd.io/s/Sy05DjEH7#)
 - [AuthorCarpentry Home](https://authorcarpentry.github.io/DT2018/)
-- [Exercise Files for Participant](https://authorcarpentry.github.io/DTSTUDENT2018/))
+- [Exercise Files for Participant](https://authorcarpentry.github.io/DTSTUDENT2018/)
 
                    
