@@ -1,6 +1,6 @@
 #  Modifying Document Appearance
 
-3 Hours
+2 Hours
 
 ---------------------------------------------------
 
@@ -19,13 +19,11 @@ The `knitr` package gives you lots of options for changing how your document loo
 ## Document Sections
 
 We have several sections in our document; it would be nice if these were
-listed in a table of contents and numbered so we could easily refer to a 
-specific section.  We don't want to have to manually update the table of
+listed in a table of contents and numbered so we could easily refer to a specific section.  We don't want to have to manually update the table of
 contents or renumber everything when we move sections around; we want knitr to do as much as possible auto-magically.
 
 In order to customize the appearance of our document, we need to pass
-information to knitr about what we want.  We use the YAML header, where we
-customized the title and author, in order to set specific options.  
+information to knitr about what we want.  We use the YAML header, where we customized the title and author, in order to set specific options.  
 
 ### Table of Contents
 
@@ -50,7 +48,7 @@ For the Word document, section numbering is controlled by a Word style document.
 
 ### HTML
 The `knitr` package supports built-in themes that format the overall document. [Click
-here to view available themes](https://bootswatch.com/3/).[^ At the time of this writing, the following themes are confirmed to work with Rmarkdown and knitr: "default", "cerulean", "journal", "flatly", "readable", "spacelab", "united", "cosmo", "lumen", "paper", "sandstone", "simplex", and "yeti". ] 
+here to view available themes](https://bootswatch.com/3/). At the time of this writing, the following themes are confirmed to work with Rmarkdown and knitr: "default", "cerulean", "journal", "flatly", "readable", "spacelab", "united", "cosmo", "lumen", "paper", "sandstone", "simplex", and "yeti". 
 
 You can control
 which theme is used for the document by adding  `theme: readable` to the YAML metadata.  Try
@@ -86,7 +84,7 @@ can hide the output message by clicking on the up arrow or modifying the options
 so that `message=FALSE`.
 
 Let's add a new code chunk that will do something fun! At the bottom of the
-'Project Description' add a new code chunk with the label `{r plot_country,echo= FALSE,fig.width=10,fig.height=11}`
+'Project Description' add a new code chunk with the label `{r plot_country,echo= TRUE,fig.width=10,fig.height=11}`
 
 Open `insert_day3a.txt` and copy the code to the body of the code chunk.
 
