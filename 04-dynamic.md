@@ -14,7 +14,7 @@ In this lesson we'll add a set of dynamic features to the exercise file and knit
 * Distinguish between dynamic elements that will (and won't) work in multiple output formats (HTML, Word)
 * Add an HTML widget to allow user interaction in an output HTML document
 * Parameterize a document to permit efficient and powerful customized HTML reports
-* Demonstrate the power of integrating content from the Web into your reproducible report
+* Demonstrate the power of integrating content from the Web (eg, your ORCID profile) into your reproducible report
 
 ----------------------------------------------------
 
@@ -48,7 +48,7 @@ Let's start by adding a `code folding` option in our HTML output. This small int
 
 2. Save the changes to the exercise file and knit to HTML and Word. 
 
-What difference do you see in how `code folding` renders in the HTML and Word outputs? You can ponder this question as you enjoy a morning break!
+What difference do you see in how `code folding` renders in the HTML and Word outputs? 
 
 ---------------------------------------------------
 
@@ -58,24 +58,11 @@ The data underlying this report is a table showing _DOAJ Seal_ journals as rows,
 
 To accomplish this enhancement, we need to copy a code chunk that formats the underlying data set using the `Datatable (DT)` package. [@R-DT].  This package is one of the [HTML Widgets](https://www.htmlwidgets.org/) that enable JavaScript libraries to create dynamic content in Rmarkdown documents. `DT` tables and other HTML Widgets are not covered in this course. However we can insert a pre-built data table in our reproducible report to illustrate the power of interactive features !
 
-1. Open the R script `insert_4b_DTtable.R` and copy all of the code with your mouse. Close the file.
+1. Open the R script `insert_DTtable.R` and copy all of the code with your mouse. Close the file. 
 
 2. In the exercise file, scroll down to the Level One heading **Annexes** and paste in the code chunk. Save the change and knit the document to HTML to see the dynamic data table generated in your report. 
 
-3. Now let's tidy up this section of the report by adding a heading above this data table and a link to the static version of the table (the static table is higher up in the exercise file).
-
-* Open the file `insert_4b_table.txt` and copy the first line of text (marked with a Level 2 header). Keep this file open because we will return to it to copy the second paragraph of text shortly...
-
-* In the exercise file, paste the copied text under the heading **Annexes** and above the data-table code chunk.
-
-* Back in the file `insert_4b_table.txt`, copy the second paragraph of text starting with "The complete data set..."
-
-* In the exercise file, scroll up to the section **Existing Data Being Reused** where the table **A Table of the first 4 rows of the DOAJ Seal data** is displayed. Immediately after the text sentence "A sample of the `doaj_seal.csv` data set is shown below", paste in the copied text. You should now have the following paragraph located above the static table.
-
-> A sample of the `doaj_seal.csv` data set is shown below.  The complete data set is available in searchable and  broweseable format as [Annex 10.1](#annex-table) at the end of this document.
-
-* Test the link to Annex 10.1 to be sure you can move between the static table and the dynamic one. Now you can build in links to different sections within an Rmarkdown document!
-
+Knit to HTML and test the interactive features of this table. Why would this dynamic addition to the reproducible report not be supported in Word?
 
 ## Adding Parameters to a Report
 
@@ -89,13 +76,13 @@ Another dynamic feature of Rmarkdown reports is the ability to add parameters th
 
 Let's parameterize our exercise file to demonstrate the power of this dynamic reporting feature!  We'll apply this feature to enable the author to select her/his Institution before knitting.  'a parameter'Institution' appears six times in the exercise file.  We will need to add some new code to the YAML header as well as to several paragraphs where the Institution has been manually entered.
 
-1. Open the file `insert_4b_params.txt` and copy all of the code. Close the file.
+1. Open the file `insert_params.txt` and copy all of the code. Close the file.
 
 2. In the YAML header of the exercise file ( at the bottom, before the three ending dashes), paste in the copied code `r params$institution`. If you wish to change the names of any of the Institutions listed, feel free to do so. Just make sure there are at least four Institutions included in the list. Save the changes.
 
-3. In the the body text of the exercise file, find five occurrences of an Institution name. To find the occurrences in the main body of the text, use the 'Find' option under RStudio's Edit menu. Replace each occurrence of an Institution name with the code ``r params$institution``.  When you `knit with parameters`, the inline R code will automatically write in the name of your selected Institution.
+3. In the the body text of the exercise file, find five occurrences of your Institution name. To find the occurrences in the main body of the text, use the 'Find' option under RStudio's Edit menu. Replace each occurrence of an Institution name with the code ``r params$institution``.  When you `knit with parameters`, the inline R code will automatically write in the name of your selected Institution.
 
-4. Knit to HTML and find six occurrences of your auto-populated Institution name.
+4. Knit to HTML and find where your manually typed institution name has been replaced with the auto-populated Institution name you selected.
 
 ## Autopopulate your Biosketch from your ORCID profile on the web
 
@@ -103,7 +90,7 @@ This final dynamic feature demonstrates the power of keeping your updated profes
 
 To make this feature work its magic, we need to get an authentication token from ORCID in order to read your bio from your ORCID profile.  This is a multi-step process, allowing RStudio and R to communicate with the ORCID system. Let's proceed step by step.
 
-1. In the exercise file, navigate to the section **Principal Investigator's Biosketch**.  Open the file `insert_4b_orcid.R`. Copy the first code chunk from this file and paste into your exercise file under the Level 2 header **Principal Investigators Biosketch**.
+1. In the exercise file, navigate to the section **Principal Investigator's Biosketch**.  Open the file `insert_orcid.R`. Copy the first code chunk from this file and paste into your exercise file under the Level 2 header **Principal Investigators Biosketch**.
 
 2. In this new code chunk in your exercise file, click the green arrow to the upper right corner to run the code. This will open up a web browser to the ORCID web site, where you'll log in to your account as usual.  
 
@@ -113,7 +100,7 @@ In your RStudio Environment window, you will see a variable called `token` added
 
 4. This step creates an .R environment file in your computer's home directory where you will store the ORCID `token`. By doing so, the authorization is able to be reactivated every time your RStudio session communicates with ORCID to refresh or add data from your profile.   
 
-Return to the file `insert_4b_orcid.R`. Now copy and paste the second code chunk into the console (NOT into your exercise file!):
+Return to the file `insert_orcid.R`. Now copy and paste the second code chunk **into the console** (NOT into your exercise file!):
 
 
 5. A new text file now opens in Rstudio.  In this file type:
@@ -125,18 +112,12 @@ ORCID_TOKEN="1c7..."
 where `1c7...` is replaced by the token that we printed to the R console earlier.  You will need to copy everything after `BEARER` that was just printed to the console. Paste it in after the `=` sign.
 
 
-6. Save this file, which will be read every time you use R.  
+6. Save this file, which will be read every time you start R.  
 
 FYI, this `.Renevironment file` will show up in your computer's home directory which is outside of your RStudio project directory. The exact "where" depends on your computer's operating system and configuration.
 
-7. In the exercise file, update the text under the **Project PI's Biosketch**, we need to make a couple of updates
 
-  a. Add the following text under the header to give attribution to the `rorcid` package. 
-
-`_This is auto-populated from your ORCID profile using the @R-rorcid `rorcid` package._`
-
-
-  b. Insert code to place the ORCID bio into the PI Biosketch section. Below
+7. Insert code to place the ORCID bio into the PI Biosketch section. Below
 the code chunk, add `\`r bio\` `
 
 8. Save the changes, knit to HTML, and you'll see the biography from your ORCID file now appear in the reproducible report.

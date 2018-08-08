@@ -18,10 +18,10 @@ The `knitr` package gives you lots of options for changing how your document loo
 ----------------------------------------------------
 ## Document Sections
 
-We have lots of sections in our document; it would be nice if these were
+We have several sections in our document; it would be nice if these were
 listed in a table of contents and numbered so we could easily refer to a 
 specific section.  We don't want to have to manually update the table of
-contents or renumber everything when we move sections around; we want `knitr` to do as much as possible automagically.
+contents or renumber everything when we move sections around; we want knitr to do as much as possible auto-magically.
 
 In order to customize the appearance of our document, we need to pass
 information to knitr about what we want.  We use the YAML header, where we
@@ -37,52 +37,31 @@ want to include a table of contents, we add the option `toc: yes` to both the
 `word_document` and `html_document` formats.  Then use the knit button to see
 the results.
 
-There are options that impact the appearance of the TOC.  For example, you can
-remove a layer of TOC sub-sections (like 'Metadata' under Data being collected) by using the
-option `toc_depth: 2`
-
 ### Section Numbers and Formatting
 
-Section numbering is where the behavior of different formats starts to diverge.
+Section numbering is where the behavior of different output formats (such as HTML versus Word) starts to diverge.
 To add section numbers to our HTML document we just need to add the option
 `number_sections: yes`.  We can also have the TOC appear as a document sidebar
 by adding `toc_float: yes` to our options.
 
-For the Word document, section numbering is controlled by the document theme
-(below).
+For the Word document, section numbering is controlled by a Word style document. Instructions for creating the Word style document are included as an optional exercise below.
 
 ## Document Themes and Custom Formatting
 
 ### HTML
 The `knitr` package supports built-in themes that format the overall document. [Click
-here to view available themes](https://bootswatch.com/3/).  You can control
-which theme is used for the document by adding `theme: readable`.  Try
+here to view available themes](https://bootswatch.com/3/).[^ At the time of this writing, the following themes are confirmed to work with Rmarkdown and knitr: "default", "cerulean", "journal", "flatly", "readable", "spacelab", "united", "cosmo", "lumen", "paper", "sandstone", "simplex", and "yeti". ] 
+
+You can control
+which theme is used for the document by adding  `theme: readable` to the YAML metadata.  Try
 switching our a different theme and see what happens! 
 
-These themes are built using standard web Cscading Style Sheets (CSS).  If we don't like how any of the built in themes look, we can add a CSS style sheet to make specific changes.  In our exercise file document, the quoted text looks too big; the font is larger than the surrounding text!  We'll control this oddity with a style sheet. To do so, make a
-text file by going to `File/New File/Text File` in RStudio.  This will open up
-an editor window where you can paste the following CSS code chunk:
+These themes are built using standard web Cascading Style Sheets (CSS).  If we don't like how any of the built in themes look, we can add a CSS style sheet to make specific changes.  In our exercise file document, the quoted text looks too big; the font is larger than the surrounding text!  We'll control this oddity with a style sheet. We've provided one for this exercise, so let's view `custom.css` in your file directory to see what it looks like. 
 
-```
-blockquote {
-    padding: 10px 20px;
-    margin: 0 0 20px;
-    font-size: 14px;
-    border-left: 5px solid #eee;
-}
-```
+This style sheet edits the spacing and font size of all the quotes in the document. You can then apply this style to your
+HTMl output  by adding the line `css: custom.css` to your YAML header.
 
-This will edit the spacing and font size of all the quotes in the document. You
-can use similar standard CSS to modify the appearance of all other elements in
-your document. Remember markdown is really just an easy way of indicating HTML
-tags, and CSS lets you modify those tags.
-
-When you have a completed css file, click the save icon and save the file
-as `custom.css`.  Note that you can call the file anything you want, but it's
-good to include the css extension.  You can then load this file in your
-document by adding the option `css: custom.css` to your YAML header.
-
-### Word
+### Word (_Optional step if time allows_)
 
 You can customize Word document styling, such as fonts, sizing, and section
 numbering, within the  Word program.  You can then provide `knitr` with the stylized Word document to use as a style sheet of sorts .  Because editing word document styling
@@ -134,35 +113,25 @@ bibliography:
 ``` 
 
 Let's open our `oajournals.bib` file and see what it looks like.  You'll see
-citation information about each article in groups indicated by a document type tag, e.g.,  `@article`, followed by a unique citation key (typically the last name of an author and the year of publication e.g. Yound_2015), followed by citation information.  If you look at the exercise document, you'll note that all of the citations have thus far been written manually (e.g., Castro et al
-(2017)).  We'll want to replace them by machine readable tags that knitr will
+citation information about each article in groups indicated by a document type tag, e.g.,  `@article`, followed by a unique citation key (typically the last name of an author and the year of publication, e.g. Castro_2017), followed by citation information.  If you look at the exercise document, you'll note that all of the citations have thus far been written manually (e.g., Castro et al
+(2017)).  We'll want to replace them by machine readable code that knitr will
 be able to combine into a Reference List at the end of the report.  We use the @ symbol to indicate a
 reference, so replace each reference with the appropriate tag, for example 
-`@Castro_2017`.
+`@Castro_2017`. If the author's name already appears in the text, you can shorten the inline citation by placing a hyphen before the key.
 
-The reference list is automatically added to the end of the document under the "References" section, so we can
-now delete the dummy references that were there.  You'll notice that
-`Vasilevsky_2017` showed up in the text as `n.d.`, even though it's in the
-reference list.  If we look in the BibTex file, we see that no authors and date
-are defined for this reference.  `Knitr` tries its best, but won't correct or complete referendes if the proper data is not available in the `.bib` file.
-
-Let's fix the problem by grabbing a correct .bib file.  One great source is the
-DOI registration agencies.  Put the DOI for `Vasilevsky_2017`,
-`10.7717/peerj.3208` into the [cross cite
-service](https://citation.crosscite.org/) and select bibtex as the citation
-style.  Copy the bibtex into oajournals.bib, change the long default citation
-key to `Vasilevsky_2017`, and see how the citation is now correct.
+At knit time, the reference list is automatically added to the end of the document under the "References" section, so we can
+now delete the dummy references that were there.  
 
 ## Embedded Sub-Documents and Math
 
-To date we've been writing everything in one Rmarkdown document.  We can
+Up to now, we've been writing our report in one Rmarkdown document.  We can
 actually build our document from sub-documents that knitr will integrate into
-the output.  The sub-documents (aka child documents) do not have to contain a complete YAML header because they are designed to be intergrated into the 'main document' or 'parent' at knit time.
+the output.  The sub-documents (aka child documents) do not have to contain a complete YAML header because they are designed to be integrated into the 'main document' or 'parent' at knit time.
 
 To see how this works, find a document in your folder called `equations-child.Rmd`.  You
 can see that this file has a minimal header followed by some
-Rmarkdown text.  You'll also see some equations written in LateX.  That's
-right; you can write LateX within an RMarkdown document and it will get correctly formatted at knit time.
+Rmarkdown text.  You'll also see some equations written in LaTeX.  That's
+right; you can write LaTeX within an RMarkdown document and it will get correctly formatted at knit time.
 
 Let's add the child document at the end of the "Project Description" section.  You
 add child documents with a code chunk, and include the document location in the
