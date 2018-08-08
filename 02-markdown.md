@@ -13,6 +13,12 @@
 
 ----------------------------------------------------
 
+## Technology Stack used in the Reproducible Reporting workflow
+
+![RMarkdown workflow](img/rmarkdownflow.png)
+
+*****
+
 ## Anatomy of an RMarkdown Reproducible Report
 
 It's time to start building your own Reproducible Report! The course instructor has prepared the basic content as plain, unformatted text and script files, so you can focus on learning Rmarkdown. Let's go step by step:
@@ -62,7 +68,7 @@ meaning. For example,
 
     For this Exercise, assign Level 1, 2, and 3 headers so the exercise file reflects the sections of a Data Management Plan. 
     
-To find the start of each major section, where a Level 1 header should be placed, look for horizontal rules marked with four asterisks \*\*\*\*.  Alternatively you may consult a model Data Management Plan format such as the UK Digital Curation Centre's checklist online at <http://www.dcc.ac.uk/resources/data-management-plans/checklist>.
+To find the start of each major section, where a Level 1 header should be placed, look for horizontal rules marked with four asterisks \*\*\*\*.  To identify the eight main section headers, you may wish to consult the _DCC Checklist for a Data Management Plan_ provided earlier.
 
 2. Add emphasis to the text, where appropriate, using single or double asterisks or single or double underscores. Either type of character works, as long as it is matched on both sides of the emphasized phrase. You may find text phrases that need emphasis such as "Not Applicable"; the title of the Project; and titles of reports or articles.
 
@@ -82,11 +88,11 @@ The result will display as oddly large text indented from the left. We'll fix th
 
 6. To display technical terminology or other non-proportional text, use the backtick symbol. A single \` on both sides works for short bits, and  three backticks \`\`\` in a separate line above and below is best for larger codeblocks.  
 
-    Find the name of a computer file (ending with 'csv') in the exercise file and mark it up to represent inline code
+    Find the name of a computer file (ending with '.csv') in the exercise file and mark it up to represent inline code
   
-    Find an example of a code block in the exercise file. When you find one, place a blue sticky note on your laptop lid, and knit the document to html, and go grab a snack!
-
 7. Create multiple links to content elsewhere by placing each link text in square brackets \[\] followed by the link address in round parentheses \(\). Don't forget to include http:// or https:// at the beginning of the link address. 
+
+There is also one link that connects to another location within the document...can you find that one and see how this kind of link is marked up?
 
 8. Create one inline image by adding an exclamation mark \! in the text, then
 placing the image name  in square brackets \[\] followed by the image file
@@ -102,15 +108,11 @@ address in round parentheses \(\).  (TIP: Make sure there is no space between th
 
 If successful, save the exercise  file again under the name `Base_2013_day3_in.Rmd`. You'll pickup in the next lesson right where you leave off today.
 
+13. Return to your shell and navigate to the folder where the your workshop files reside. Add the files, commit them, and push the files back up to the GitHub repository. That way the current version of your files is saved in GitHub and all your work is backed up!
 
 **Congratulations on completing the first draft of your Reproducible Report!**
 
 ****
 
-## Technology Stack used
-
-![RMarkdown workflow](img/rmarkdownflow.png)
-
-****
 
 Previous: [Getting Started with Markdown](01-getting-started.html) Next: [Modifying Appearance](03-modifying-appearance.html)
