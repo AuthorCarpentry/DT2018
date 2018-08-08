@@ -1,64 +1,65 @@
-#  Introduction to Reproducible and Dynamic Reporting
-2 Hours
+#  Introduction to Reproducible Reporting
+1 Hour
 
 -------------------------
 
 ## Learning Objectives
 
-* Discuss elements of a reproducible research report (also called 'executable research compendium')
+* Discuss characteristics of a reproducible research report (also called 'executable research compendium' and 'Paper of the Future')
 * Explore a real-life reproducible research report
-* Install R packages needed for this course
-* Render a provided reproducible report to HMTL, docx, and slides using Rstudio, Rmarkdown, and the knitr package
+* Install R packages needed to create a research report in RStudio
+* Render a provided reproducible report to HMTL, docx, and HTML slides using Rstudio, Rmarkdown, and the knitr package
 
 ----------------------------------------------------
 
 ### Has the research paper changed much in the last ~400 years?
 
-- _Philosophical Transactions of the Royal Society_ first published in 1665
+- _Philosophical Transactions of the Royal Society_ first published in 1665  
 -  This first scientific journal established the important principles of scientific priority and peer review, which have become the central foundations of scientific journals ever since.
 
-![Transactions of the Royal Society, 1714](img/transactions2.jpg)
-
+![Transactions of the Royal Society, 1714](img/transactions.gif)
 Source: Royal Society of London, <http://rstl.royalsocietypublishing.org/>
+
+### Fast forward ~ 400 years
+
+#### The scholarly record requires four key functions of a research report:
+1. Registration of the author's claim
+2. Certification that the research was conducted properly
+3. Dissemination of the work to the right audiences
+4. Preservation to ensure a permanent public record of the work that can be found and cited
+
+(Rallison, S.P., 'What are Journals For?', _Ann R Coll Surg Engl._ 2015 Mar; 97(2): 89-91. DOI:10.1308/003588414X14055925061397)
 
 *****
 
-### Why static PDFs are an underwhelming use of today's technology
+#### Why static PDFs are an underwhelming use of today's technology
 
-- #### There are 4 requirements of the Scholarly Record ^[Source: Rallison, S.P., 'What are Journals For?', _Ann R Coll Surg Engl._ 2015 Mar; 97(2): 89-91. DOI: 10.1308/003588414X14055925061397]
+We now have the tools to create a first class research report that meets these 4 requirements and is also Transparent, Re-Useable, and Reproducible. 
 
-    1. Registration of the author's claim
-    2. Certification that the research was conducted properly
-    3. Dissemination of the work to the right audiences
-    4. Preservation to ensure a permanent public record of the work that can be found and cited
+**A Reproducible Research Report **:
 
-
-- #### We now have the tools to create a first class object that meets these 4 requirements and is also **Findable, Accessible, Interoperable, Re-Useable, and Reproducible** 
-
-    - #### What are Reproducible research reports and why are they **FAIR**?
-
-        1. They are written in plain text which is universally portable and readable by humans and machines
-        1. They combine text explanations with code and dynamically generated figures, tables, and plots, all in one executable file
-        1. They replace static numbers, dates, and other values in the text with code that generates accurate and up-to-date values by the computer
-        1. They allow the author to work in the same environment used to write the code and generate the plots and tables
-        1. They allow the author to compose one report and then compile/render it to many different outputs, depending on the need
+1. Written and coded in plain text which is universally portable and readable by humans and machines
+1. Combines text explanations with code and dynamically generated figures, tables, and plots, all in one executable file
+1. Replaces static numbers, dates, and other values in the text with code that generates the most accurate and up-to-date values by the computer
+1. Allows the author to work in the same environment used to write the code and analyze the data, and generate the plots and tables
+1. They allow the author to compose one report and then compile/render it to many different outputs, depending on the need
 
 
+#### Let's look at a reproducible report 
 
-- #### Instructor Demo: Let's look at a reproducible report 
+- We'll create our own in the next two days!
 
-    - We'll create our own in the next two days!
+- The first step in getting this dynamic document is installing some software
 
-    - The first step in getting this dynmaic document is installing some software
-
-## Software Installation
+*****
+### Software Installation
 
 R is a programming language that is especially powerful for data exploration,
 visualization, and statistical analysis. To interact with R, we use RStudio.
 For this workshop you'll need to install both R (version 3.4.3 or newer) and
 RStudio on your computer.  
 
-### Windows
+#### Windows
 Install R by downloading and running this
 [.exe](https://cran.r-project.org/bin/windows/base/release.htm) file from CRAN. 
 Also, please install the [RStudio
@@ -67,13 +68,13 @@ Note that if you have separate user and admin accounts, you should run the
 installers as administrator (right-click on .exe file and select "Run as administrator" 
 instead of double-clicking). Otherwise problems may occur later, for example when installing R packages.
 
-### macOS
+#### macOS
 Install R by downloading and running this
 [.pkg](https://cran.r-project.org/bin/macosx/R-latest.pkg) file from CRAN. Also, 
 please install the [RStudio
 IDE](https://www.rstudio.com/products/rstudio/download/#download).
 
-### Linux
+#### Linux
 You can download the binary files for your distribution from
 [CRAN](https://cran.r-project.org/index.html). Or you can use your package 
 manager (e.g. for Debian/Ubuntu run sudo apt-get install r-base and for 
@@ -81,7 +82,7 @@ Fedora run sudo dnf install R). Also, please install the [RStudio
 IDE](https://www.rstudio.com/products/rstudio/download/#download).
 
 
-## Workshop Files
+### Workshop Files
 
 You also need to download some files for this workshop:
 
@@ -91,18 +92,7 @@ You also need to download some files for this workshop:
 3. Open the files in RStudio and let's get to work!
 
 
-## Intro to RStudio, Rmarkdown, and the knitr package
-
-Now open Rstudio (Applications/Rstudio).  Rstudio is the development
-environment where we'll be working on our document.  The main panel you'll see
-on the left is the Console, where you can run R code.  On the right is two
-panels - the upper contains your environment (what R can access), and the lower
-contains the files on your computer.  
-
-The first thing to do is install some packages.  RStudio makes it easy to
-install new packages to do things you want.  You can find packages by going to
-the 'Packages' tab in the lower right panel.  You can install new packages by
-clicking the Install button and typing in the package name.  
+### Intro to Rmarkdown and the knitr package
 
 For this lesson, we need the following packages:
 
@@ -126,7 +116,7 @@ time you do this you'll get a message that you need to install some packages.
 You'll want to click Yes and wait for the packages to install.  Once the
 installation you'll see an interactive demonstration document!
 
-You can output this single file in multiple formats.  By default we''ve been'll be
+You can output this single file in multiple formats.  By default we''ve been be
 generating .html files, but we can also output to a Word document.  If you
 click on the downward arrow next to the knit button we see some default
 formats.  Click on Word, and a Word document will appear.  
