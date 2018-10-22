@@ -1,4 +1,4 @@
-Reproducible Research Reporting with Open Authoring Tools
+Author Carpentry at RDA/CODATA DataTrieste2018: Reproducible Research Reporting with Open Authoring Tools
 =======
 
 - *Instructor: Gail Clement* 
@@ -15,11 +15,11 @@ Reproducible Research Reporting with Open Authoring Tools
 
 ### Topics:
 
-1. [Day 1: Introduction](00-getting-started.html)
-2. [Day 2: Basic Markdown](01-markdown.html)
-3. [Day 3: Document Appearance](02-modifying-appearance.html)
-4. [Day 4: Dynamic Documents](03-dynamic.html)
-5. [Day 5: Publishing](04-publishing.html)
+1. [Day 1: Introduction](01-getting-started.html)
+2. [Day 2: Basic Markdown](02-markdown.html)
+3. [Day 3: Document Appearance](03-modifying-appearance.html)
+4. [Day 4: Dynamic Documents](04-dynamic.html)
+5. [Day 5: Publishing](05-publishing.html)
 
 ### Requirements
 

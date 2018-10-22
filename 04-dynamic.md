@@ -78,17 +78,11 @@ Let's parameterize our exercise file to demonstrate the power of this dynamic re
 
 1. Open the file `insert_params.txt` and copy all of the code. Close the file.
 
-2. In the YAML header of the exercise file ( at the bottom, before the three
-ending dashes), paste in the copied code from the previous step. If you wish 
-to change the names of any of the Institutions listed, feel free to do so. 
-Just make sure there are at least four Institutions included in the list. Save the changes.
+2. In the YAML header of the exercise file ( at the bottom, before the three ending dashes), paste in the copied code `r params$institution`. If you wish to change the names of any of the Institutions listed, feel free to do so. Just make sure there are at least four Institutions included in the list. Save the changes.
 
 3. In the the body text of the exercise file, find five occurrences of your Institution name. To find the occurrences in the main body of the text, use the 'Find' option under RStudio's Edit menu. Replace each occurrence of an Institution name with the code ``r params$institution``.  When you `knit with parameters`, the inline R code will automatically write in the name of your selected Institution.
 
 4. Knit to HTML and find where your manually typed institution name has been replaced with the auto-populated Institution name you selected.
-
-
-
 
 ## Autopopulate your Biosketch from your ORCID profile on the web
 
